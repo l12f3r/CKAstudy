@@ -1,5 +1,3 @@
-# CKAstudy
-
 # Exploring the Kubernetes Architecture
 
 ## What is Kubernetes (technically speaking)?
