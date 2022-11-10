@@ -8,6 +8,6 @@
     - Schedules the creation and management of Pods
 
 ### Types of Controllers:
-    - **ReplicaSet**: Defines a number of replicas of Pods that needs to be up and running at all times
-    - **Deployments**: Manages rollout of ReplicaSets; 
-        - Also manage the transition of two versions of ReplicaSets (i.e. moving between two versions of an app,), rolling back to a previous version if needed
+- **ReplicaSet**: Defines a number of replicas of Pods that needs to be up and running at all times
+- **Deployments**: Manages rollout of ReplicaSets; 
+    - Also manage the transition of two versions of ReplicaSets (i.e. moving between two versions of an app,), rolling back to a previous version if needed
