@@ -3,9 +3,8 @@
 ## Pods
 - Represent one or more containers on a cluster
     - That is, one or more container-based microservice(s) that are part of the application/service
-- Unit of *scheduling*
-    - The most basic unit of work within Kubernetes
-    - Upon provisioning a Pod, Kubernetes uses the information manifested on code to *schedule* Pods with the necessary resources to meet the desired state
+- Most basic unit of work within Kubernetes - unit of *scheduling*
+    - Upon provisioning a Pod, Kubernetes' Controllers uses the information manifested on code to *schedule* Pods with the necessary resources to meet the desired state
 - Ephemeral - no Pod is redeployed, always a new one is provisioned after destroy
     - Technically speaking, no state is kept or shared between a destroyed Pod and its substitute
 - Atomicity - they're there, or not
