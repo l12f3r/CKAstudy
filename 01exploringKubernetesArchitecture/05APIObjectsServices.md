@@ -6,3 +6,5 @@
         - Adds persistency
     - Leverages services by adding/removing Pods depending on demand/health
     - Provides a load balancer to distribute application load across Pods
+
+- Services identifies which ephemeral pods are served using labels
