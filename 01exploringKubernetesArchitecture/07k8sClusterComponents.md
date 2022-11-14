@@ -3,9 +3,9 @@
 ## Cluster components
 
 ### Control Plane Node: 🧠
-    - Coordinates cluster operations, monitoring, Pod scheduling
-    - Primary access point to cluster administration (probably where Prometheus gets info from)
-    - Previously known as "Master"
+- Coordinates cluster operations, monitoring, Pod scheduling
+- Primary access point to cluster administration (probably where Prometheus gets info from)
+- Previously known as "Master"
 
 #### Control Plane Node components:
 - **API server**: primary access point for cluster and administrative operations; communication hub
@@ -21,11 +21,11 @@
 - **All (Worker) Node components**
 
 ### (Worker) Node: 👩‍🏭
-    - Where application Pods run; contributes to cluster's compute capacity
-    - Usually multiple on clusters, depending on scalability requirements
-    - Starts Pods and containers within;
-    - Implement networking;
-    - Either virtual or physical machines
+- Where application Pods run; contributes to cluster's compute capacity
+- Usually multiple on clusters, depending on scalability requirements
+- Starts Pods and containers within;
+- Implement networking;
+- Either virtual or physical machines
 
 #### (Worker) Node components:
 - **Kubelet**: starts Pod on a Node
@@ -44,4 +44,4 @@
 ![image](https://user-images.githubusercontent.com/22382891/201743268-46178043-b5c5-4828-bcc1-06d75c35ce8f.png)
 
 ### kubectl:
-    - CLI used to interact with the API server
+- CLI used to interact with the API server
