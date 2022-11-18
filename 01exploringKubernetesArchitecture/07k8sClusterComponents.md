@@ -28,7 +28,7 @@
 - Either virtual or physical machines
 
 #### (Worker) Node components:
-- **Kubelet**: starts Pod on a Node
+- **Kubelet**: Starts Pod on a Node
     - Communicates directly with API server, monitoring it for changes 
         - Applies Pod lifecycle in reaction to state changes
     - Reports Node and Pod state
@@ -42,6 +42,15 @@
     - containerd, Docker etc
 
 ![image](https://user-images.githubusercontent.com/22382891/201743268-46178043-b5c5-4828-bcc1-06d75c35ce8f.png)
+
+### Add-on Pods ➕𝟭: Provide special services to the cluster
+- **DNS**: Uses CoreDNS (the Domain Name Server) to provide DNS services to the cluster
+    - DNS Pods have their IP addresses and search suffixes placed on the networking configuration of every Pod, Node or Service created by the API server
+    - Used for service discovery for applications deployed on a cluster
+    - Occur in nearly every k8s cluster
+- **Ingress Controller**: advanced HTTP/Layer 7 load balancer/content router (optional)
+- **Dashboard**: web-based administration of the cluster (optional)
+- **Network Overlays**: TBD
 
 ### kubectl:
 - CLI used to interact with the API server
