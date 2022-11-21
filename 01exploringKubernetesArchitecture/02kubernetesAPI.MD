@@ -4,10 +4,14 @@
 - A RESTful API running over HTTP/S using JSON
 - Sole way of interacting (either declaratively or imperatively) with the cluster
 - Requests are serialized and persisted into the cluster data store
+- All configurations changes pass through it
+- Validates API operations and persists it on etcd
 
 ## Key API objects
-- **Pod**: collection of containers deployed as a single unit
-- **Controllers**: responsible for keeping the desired state
-- **Services**: persistent access point to applications deployed in pods
+- **[Pods](03APIObjectsPods.MD)**: collection of containers deployed as a single unit
+- **[Controllers](04APIObjectsControllers.MD)**: responsible for keeping the desired state
+- **[Services](05APIObjectsServices.md)**: persistent access point to applications deployed in pods
     - Think of route tables with DNS
-- **Storage**: persistent data storage
+- **[Storage](06APIObjectsStorage.md)**: persistent data storage
+
+## Return to [Summary](01exploringKubernetesArchitecture/README.md)
