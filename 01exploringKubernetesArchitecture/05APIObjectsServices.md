@@ -9,4 +9,4 @@
 
 - Services identifies which ephemeral [Pods](03APIObjectsPods.MD) are served using labels
 
-###### Return to [Summary](01exploringKubernetesArchitecture)
+###### Return to [Summary](https://github.com/l12f3r/CKAstudy/tree/main/01exploringKubernetesArchitecture#readme)

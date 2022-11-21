@@ -12,4 +12,4 @@
 - Kubernetes tracks the state of Pods and health of its containers to ensure that Pods are running and the app within it is also OK
     - Health is checked by **probes** (ex.: a probe in a web app Pod would check the URL and see how the app responds)
 
-###### Return to [Summary](01exploringKubernetesArchitecture)
+###### Return to [Summary](https://github.com/l12f3r/CKAstudy/tree/main/01exploringKubernetesArchitecture#readme)

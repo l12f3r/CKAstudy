@@ -15,4 +15,4 @@
 
 ![image](https://user-images.githubusercontent.com/22382891/203161110-33887c0c-b5a8-43a7-b269-9dfb6b4e29c9.png)
 
-###### Return to [Summary](01exploringKubernetesArchitecture)
+###### Return to [Summary](https://github.com/l12f3r/CKAstudy/tree/main/01exploringKubernetesArchitecture#readme)

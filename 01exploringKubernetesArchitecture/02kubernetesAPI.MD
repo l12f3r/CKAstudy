@@ -14,4 +14,4 @@
     - Think of route tables with DNS
 - **[Storage](06APIObjectsStorage.md)**: persistent data storage
 
-###### Return to [Summary](01exploringKubernetesArchitecture)
+###### Return to [Summary](https://github.com/l12f3r/CKAstudy/tree/main/01exploringKubernetesArchitecture#readme)

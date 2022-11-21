@@ -12,4 +12,4 @@
 - **Deployments**: Manages rollout of ReplicaSets; 
     - Also manage the transition of two versions of ReplicaSets (i.e. moving between two versions of an app,), rolling back to a previous version if needed
 
-###### Return to [Summary](01exploringKubernetesArchitecture)
+###### Return to [Summary](https://github.com/l12f3r/CKAstudy/tree/main/01exploringKubernetesArchitecture#readme)

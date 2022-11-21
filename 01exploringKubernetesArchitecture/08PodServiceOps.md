@@ -20,4 +20,4 @@ In this scenario, the [Pods](03APIObjectsPods.MD) within this Cluster are web ap
 1. Incoming requests to the Cluster are load balanced to all web application [Pods](03APIObjectsPods.MD);
 2. If a [Pod](03APIObjectsPods.MD) becomes unresponsive, the [ReplicaSet](04APIObjectsControllers.MD#types-of-controllers) controller removes the [Pod](03APIObjectsPods.MD) and add a new one. The load balancer sends traffic to other healthy [Pods](03APIObjectsPods.MD).
 
-###### Return to [Summary](01exploringKubernetesArchitecture)
+###### Return to [Summary](https://github.com/l12f3r/CKAstudy/tree/main/01exploringKubernetesArchitecture#readme)
