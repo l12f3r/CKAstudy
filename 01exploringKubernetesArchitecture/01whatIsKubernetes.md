@@ -27,4 +27,4 @@
     - Central communication hub for information in a cluster
     - Where interaction with the cluster occurs
 
-## Return to [Summary](01exploringKubernetesArchitecture/README.md)
+###### Return to [Summary](01exploringKubernetesArchitecture)
