@@ -5,7 +5,7 @@
 - Port numbers are usually configureable, but default values are commom (and good) practice
 
 ## How resources communicate
-- [Kubelet](07k8sClusterComponents.md#worker-node-components) and [Kube-proxy](07k8sClusterComponents.md#worker-node-components) on the worker node 👩‍🏭 communicate with the [API server](02kubernetesAPI.MD) on the control plane node 🧠 via [TCP/IP](https://www.techtarget.com/searchnetworking/definition/TCP-IP).
+- [Kubelet](/01exploringKubernetesArchitecture/07k8sClusterComponents.md#worker-node-components) and [Kube-proxy](/01exploringKubernetesArchitecture/07k8sClusterComponents.md#worker-node-components) on the worker node 👩‍🏭 communicate with the [API server](/01exploringKubernetesArchitecture/02kubernetesAPI.MD) on the control plane node 🧠 via [TCP/IP](https://www.techtarget.com/searchnetworking/definition/TCP-IP).
     - Some TCP/IP ports are reserved for cluster communication and should be taken into account upon developing firewall rules
 
 | Component  | Ports (TCP) | Used by |
