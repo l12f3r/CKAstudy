@@ -40,9 +40,12 @@
     - 2 CPUs
     - 2GB of RAM
     - [Swap process](https://www.linux.com/news/all-about-linux-swap-space/) disabled
-- Container runtime 📦
+- Container runtime
     - Container runtime interface (CRI) compatible
         - Docker (deprecated from Kubernetes version 1.23 onwards), containerd or CRI-O
 - Networking
     - Connectivity between all nodes
     - Each system must have a unique hostname and MAC address
+
+## Getting Kubernetes
+- Maintained on GitHub: https://github.com/kubernetes/kubernetes
