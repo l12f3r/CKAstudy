@@ -12,6 +12,8 @@
 
 ## Required packages
 
+| Package  | Reason why required |
+| ------------- | ------------- |
 | containerd | container runtime |
 | [Kubelet](/01exploringKubernetesArchitecture/07k8sClusterComponents.md#worker-node-components) | drives work on individual nodes on the cluster |
 | [kubeadm](01installationConsiderationsMethodsReqs.md#installation-methods) | bootstraps cluster, joins additional nodes to cluster |
