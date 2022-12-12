@@ -1,7 +1,6 @@
 # Installing and Configuring Kubernetes
 
 ## Where to install?
-
 - In the cloud ☁️
     - Internet as a service (IaaS) - **Virtual machines**
         - All networking, hypervisor and infrastructure is provisioned by cloud - user provides patching the OS and installing K8s
@@ -14,7 +13,6 @@
     - Virtual machines
 
 ## Other considerations
-
 - Cluster networking
     - Overlay networking? Or have a network engineering team to ensure layer 2 and 3 connectivity?
     - Ensure no network IP range overlaps between cluster and rest of networking infra
@@ -25,7 +23,6 @@
     - Backup and recovery of etcd data
 
 ## Installation methods
-
 - Desktop installation 🖥️
     - Ideal for development and training environments
 - kubeadm (a.k.a. "kubeadmin") 🛠️
@@ -34,7 +31,6 @@
     - Deployment of IaaS and PaaS in cloud providers
 
 ## Installation requirements
-
 - System requirements
     - Linux 🐧 (Ubuntu, RHEL, CentOS etc)
     - 2 CPUs
@@ -46,6 +42,3 @@
 - Networking
     - Connectivity between all nodes
     - Each system must have a unique hostname and MAC address
-
-## Getting Kubernetes
-- Maintained on GitHub: https://github.com/kubernetes/kubernetes
