@@ -28,12 +28,12 @@
 - Either virtual or physical machines
 
 #### (Worker) Node components:
-- **Kubelet**: Starts [Pods](03APIObjectsPods.MD) on a Node
+- **Kubelet** 👩‍🏭: Starts [Pods](03APIObjectsPods.MD) on a Node
     - Communicates directly with [API server](02kubernetesAPI.MD), monitoring it for changes 
         - Applies [Pod](03APIObjectsPods.MD) lifecycle in reaction to state changes
     - Reports Node and [Pod](03APIObjectsPods.MD) state
     - Executes probes
-- **Kube-proxy**: Pod networking, implementing [Services](05APIObjectsServices.md) abstraction on Node using iptables (and other modes)
+- **Kube-proxy** 📰: Pod networking, implementing [Services](05APIObjectsServices.md) abstraction on Node using iptables (and other modes)
     - Communicates directly with [API server](02kubernetesAPI.MD), monitoring it for changes (such as network topology changes)
     - Routes traffic to [Pods](03APIObjectsPods.MD)
     - Provides load balancing
