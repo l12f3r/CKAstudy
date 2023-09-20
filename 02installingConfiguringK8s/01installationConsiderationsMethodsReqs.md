@@ -26,7 +26,7 @@
 - Desktop installation 🖥️
     - Ideal for development and training environments
 - kubeadm (a.k.a. "kubeadmin") 🛠️
-    - Package that allows bootstrapping and cluster and get it running fast
+    - Package that allows bootstrapping a cluster and get it running fast
 - Cloud scenarios ☁️
     - Deployment of IaaS and PaaS in cloud providers
 
