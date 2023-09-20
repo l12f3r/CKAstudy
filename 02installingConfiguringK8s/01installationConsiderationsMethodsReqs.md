@@ -14,18 +14,18 @@
 
 ## Other considerations
 - Cluster networking
-    - [Overlay networking](02installingConfiguringK8s/05podNetworkingFundamentals.md)? Or having a network engineering team to ensure layer 2 and 3 connectivity?
+    - [Overlay networking](05podNetworkingFundamentals.md)? Or having a network engineering team to ensure layer 2 and 3 connectivity?
     - Ensure no network IP range overlaps between cluster and rest of networking infra
 - Scalability 🧗‍♀️
     - Enough nodes with enough resources (CPU, RAM) to meet workload demand, or if failure occurs
 - High Availability and Disaster Recovery 💩
-    - How to create replicas of Control Plane nodes, API server and etcd to ensure redundancy
+    - How to create replicas of Control Plane nodes, [API server](02kubernetesAPI.MD) and [etcd](07k8sClusterComponents.md#control-plane-node-components) to ensure redundancy
     - Backup and recovery of etcd data
 
 ## Installation methods
 - Desktop installation 🖥️
     - Ideal for development and training environments
-- [`kubeadm`](02installingConfiguringK8s/04bootstrappingClusterKubeadm.md) (a.k.a. "kubeadmin") 🛠️
+- [`kubeadm` (a.k.a. "kubeadmin")](04bootstrappingClusterKubeadm.md) 🛠️
     - Package that allows bootstrapping a cluster and get it running fast
 - Cloud scenarios ☁️
     - Deployment of IaaS and PaaS in cloud providers
