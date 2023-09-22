@@ -10,14 +10,13 @@
             - Control Plane node's IP endpoint must be entered on `localAPIEndpoint.advertiseAddress`;
             - `nodeRegistration.criSocket`: `\/run\/containerd\/containerd\/.sock`
             - Set the cgroup driver for the kubelet to systemd (running the code below, which does not exist on the file)
-                - ```
-                cat <<EOF | cat >> ClusterConfiguration.yaml
-                ---
-                apiVersion: kubelet.config.k8s.io/v1beta1
-                kind: KubeletConfiguration
-                cgroupDriver: systemd
-                EOF
-                ```
+            ```cat <<EOF | cat >> ClusterConfiguration.yaml
+            ---
+            apiVersion: kubelet.config.k8s.io/v1beta1
+            kind: KubeletConfiguration
+            cgroupDriver: systemd
+            EOF
+            ```
             - Define the `kubernetesVersion` to the proper value
 3. `sudo kubeadm init --config=CLusterConfiguration.yaml --cri-socket /run/containerd/containerd.sock` to start kubeadm passing the configuration and CRI socket files as parameters
     - CRI must be defined to avoid defaulting to Docker
