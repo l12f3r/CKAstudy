@@ -10,7 +10,8 @@
             - Control Plane node's IP endpoint must be entered on `localAPIEndpoint.advertiseAddress`;
             - `nodeRegistration.criSocket`: `\/run\/containerd\/containerd\/.sock`
             - Set the cgroup driver for the kubelet to systemd (running the code below, which does not exist on the file)
-            ```cat <<EOF | cat >> ClusterConfiguration.yaml
+            ```
+            cat <<EOF | cat >> ClusterConfiguration.yaml
             ---
             apiVersion: kubelet.config.k8s.io/v1beta1
             kind: KubeletConfiguration
