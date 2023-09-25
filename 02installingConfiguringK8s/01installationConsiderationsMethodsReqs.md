@@ -42,3 +42,5 @@
 - Networking
     - Connectivity between all nodes
     - Each system must have a unique hostname and MAC address
+
+###### Return to [Summary](https://github.com/l12f3r/CKAstudy/tree/main/02installingConfiguringK8s#readme)

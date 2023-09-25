@@ -22,3 +22,5 @@
 [^2]: etcd communicates with "itself" when a redundant configuration is set: etcd's multiple replicas would need to fetch data within themselves
 [^3]: Only on `localhost`: not exposed to outside communications
 [^4]: The NodePort Service exposes ports on each individual node in the cluster. So, anything that needs to access the content of a specific node needs to access this node's port.
+
+###### Return to [Summary](https://github.com/l12f3r/CKAstudy/tree/main/02installingConfiguringK8s#readme)

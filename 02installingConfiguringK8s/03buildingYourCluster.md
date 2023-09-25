@@ -34,3 +34,5 @@ EOF
 5. Install remaining required packages ([Kubelet](/01exploringKubernetesArchitecture/07k8sClusterComponents.md#worker-node-components), [kubeadm](01installationConsiderationsMethodsReqs.md#installation-methods) and [kubectl](/01exploringKubernetesArchitecture/07k8sClusterComponents.md#kubectl)): `apt-get install kubelet kubeadm kubectl`
 
 [^1]: Should be executed on all nodes (both control plane 🧠 and worker 👩‍🏭 ones)
+
+###### Return to [Summary](https://github.com/l12f3r/CKAstudy/tree/main/02installingConfiguringK8s#readme)

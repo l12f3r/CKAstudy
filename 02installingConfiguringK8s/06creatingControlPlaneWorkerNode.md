@@ -80,3 +80,5 @@ The following processes occur during join:
 - **Generate and submit a certificate signing request (CSR)**: for the kubelet on the recently joined node to authenticate to the API server
 - **CA automatically signs the CSR**: certificate is then dowloaded and stored on `/var/lib/kubelet/pki` of the node to be provisioned
 - **Generate and configure `kubelet.conf`** to `/etc/kubernetes` on the node
+
+###### Return to [Summary](https://github.com/l12f3r/CKAstudy/tree/main/02installingConfiguringK8s#readme)

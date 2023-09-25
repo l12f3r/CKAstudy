@@ -1,6 +1,6 @@
 # Installing and Configuring Kubernetes
 
-## Pod networking
+## Pod networking fundamentals
 
 Two different approaches:
 - **Overlay Networking**:
@@ -15,3 +15,4 @@ Two different approaches:
     - On pod-to-pod communication, packets are sent directly (usually using routing) to the IP address of the destination pod
     - More performance-efficient since there is no encapsulation and decapsulation of packets. Additionally, it can be simpler to configure and manage compared to overlay networking.
 
+###### Return to [Summary](https://github.com/l12f3r/CKAstudy/tree/main/02installingConfiguringK8s#readme)

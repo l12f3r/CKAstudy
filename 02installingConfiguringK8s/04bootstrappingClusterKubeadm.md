@@ -37,3 +37,5 @@
 - Describes Pod configurations
 - Generated for each of the Control Plane 🧠 components ([etcd](07k8sClusterComponents.md#control-plane-node-components), [API server](02kubernetesAPI.MD), [Controller Manager](07k8sClusterComponents.md#control-plane-node-components), [Scheduler](07k8sClusterComponents.md#control-plane-node-components))
 - Written to the file system and monitored by the [Kubelet](07k8sClusterComponents.md#worker-node-components)
+
+###### Return to [Summary](https://github.com/l12f3r/CKAstudy/tree/main/02installingConfiguringK8s#readme)
