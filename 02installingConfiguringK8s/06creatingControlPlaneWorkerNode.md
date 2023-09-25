@@ -24,7 +24,7 @@
 
 ## Run administratively with a non-privileged user
 
-Once `kubeadm init` is completed, all Control Plane 🧠 [pods](03APIObjectsPods.MD) will be up and running. Some commands and parameters necessary to join additional nodes to the cluster will be printed, as well as instructions to run as admin with the user logged:
+Once `kubeadm init` is completed, all Control Plane 🧠 [Pods](../01exploringKubernetesArchitecture/03APIObjectsPods.MD) will be up and running. Some commands and parameters necessary to join additional nodes to the cluster will be printed, as well as instructions to run as admin with the user logged:
 
 1. Create a directory for the kubeconfig file on ~: `mkdir -p $HOME/.kube`
 2. Copy the default admin config file to the newly created directory, under a new name: `sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config`
@@ -72,7 +72,7 @@ Once `kubeadm init` is completed, all Control Plane 🧠 [pods](03APIObjectsPods
     EOF'
     ```
     - `sudo apt-get update`, then `sudo apt-get install -y kubelet kubeadm kubectl`
-7. **Join node to cluster**: run `sudo kubeadm join 0.0.0.0:0 --token blkx8 sha256:hash`, changing those zeroes for the IP address and port of the [API server](02kubernetesAPI.MD), `blkx8` for the bootstrap token and `sha256:hash` for the CA cert hash
+7. **Join node to cluster**: run `sudo kubeadm join 0.0.0.0:0 --token blkx8 sha256:hash`, changing those zeroes for the IP address and port of the [API server](../01exploringKubernetesArchitecture/02kubernetesAPI.MD), `blkx8` for the bootstrap token and `sha256:hash` for the CA cert hash
     - Token and cert hash are printed after `kubeadm init` is completed on the Control Plane 🧠
 
 The following processes occur during join:

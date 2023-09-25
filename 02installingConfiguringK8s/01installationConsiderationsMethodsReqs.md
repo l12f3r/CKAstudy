@@ -19,7 +19,7 @@
 - Scalability 🧗‍♀️
     - Enough nodes with enough resources (CPU, RAM) to meet workload demand, or if failure occurs
 - High Availability and Disaster Recovery 💩
-    - How to create replicas of Control Plane nodes, [API server](02kubernetesAPI.MD) and [etcd](07k8sClusterComponents.md#control-plane-node-components) to ensure redundancy
+    - How to create replicas of Control Plane nodes, [API server](../01exploringKubernetesArchitecture/02kubernetesAPI.MD) and [etcd](../01exploringKubernetesArchitecture/07k8sClusterComponents.md#control-plane-node-components) to ensure redundancy
     - Backup and recovery of etcd data
 
 ## Installation methods
@@ -39,7 +39,7 @@
 - Container runtime
     - Container runtime interface (CRI) compatible
         - Docker (deprecated from Kubernetes version 1.23 onwards), containerd or CRI-O
-- Networking
+- [Networking](../01exploringKubernetesArchitecture/09NetworkingFundamentals.md)
     - Connectivity between all nodes
     - Each system must have a unique hostname and MAC address
 

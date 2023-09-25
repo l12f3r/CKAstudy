@@ -3,13 +3,13 @@
 ## kubectl introduction, usage and closer look
 
 - Primary CLI tool for controlling workloads on a Kubernetes cluster
-    - To perform **operations** (create, read, update or delete by interacting with the [API server](02kubernetesAPI.MD)) against
-    - **resources** (objects like [Pods](03APIObjectsPods.MD), [Deployments](04APIObjectsControllers.MD#types-of-controllers), [Services](05APIObjectsServices.md) etc)
+    - To perform **operations** (create, read, update or delete by interacting with the [API server](../01exploringKubernetesArchitecture/02kubernetesAPI.MD)) against
+    - **resources** (objects like [Pods](../01exploringKubernetesArchitecture/03APIObjectsPods.MD), [Deployments](../01exploringKubernetesArchitecture/04APIObjectsControllers.MD#types-of-controllers), [Services](../01exploringKubernetesArchitecture/05APIObjectsServices.md) etc)
 - Generates output on different formats (JSON, YAML)
 
 ## Main operations using kubectl
 - `kubectl apply` or `kubectl create`: sends API request to create a Deployment resource
-- `kubectl run`: starts a single Pod from an image (when Pod is not managed by a [controller](04APIObjectsControllers.MD))
+- `kubectl run`: starts a single Pod from an image (when Pod is not managed by a [controller](../01exploringKubernetesArchitecture/04APIObjectsControllers.MD))
 - `kubectl explain`: provides documentation on resources, lists required fields (`apiVersion`, `kind`, `spec` etc) for declaring resource
 - `kubectl delete`: deletes resources
 - `kubectl get`: lists resources, provides basic information about specified resource type
