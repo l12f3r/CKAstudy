@@ -54,5 +54,6 @@
 
 ### kubectl:
 - CLI used to interact with the [API server](02kubernetesAPI.MD)
+- Further info on [Working with your Kubernetes Cluster section](03workingK8sCluster/01kubectlIntroUsageCloser.md)
 
 ###### Return to [Summary](https://github.com/l12f3r/CKAstudy/tree/main/01exploringKubernetesArchitecture#readme)
