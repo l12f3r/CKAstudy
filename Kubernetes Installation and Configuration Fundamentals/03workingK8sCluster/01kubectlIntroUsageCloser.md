@@ -19,6 +19,9 @@
 - `kubectl cluster-info`: lists/inspects cluster on current context (where the Control Plane 🧠 is running and KubeDNS information)
 - `kubectl api-resources`: asks for known resources and lists its aliases (`SHORTNAMES`)
 - `kubectl -h`: help page - can be combined with operations (`kubectl get -h` for example)
+- `kubectl expose`: exposes the object as a Service, creating a Service for it
+    - `--port=80`: Service's port within the internal cluster. Where cluster resources must point to
+    - `--target-port=8080`: Pod's service port, defined when Pods are started
 
 ## Specifying the output format
 - `-o wide`:  output additional info on deployed resources
@@ -30,3 +33,5 @@
 `kubectl [command] [type] [name] [flags]` is the example pattern herein used. Some examples of valid commands:
 - `kubectl get pods podExample --output=yaml` would output information from the `podExample` Pod as YAML. If only `kubectl get pods` was entered, information on all Pods within the default namespace would be provided;
 - `kubectl create deployment nginx --image=nginx` would create a deployment using the `nginx` image.
+
+###### Return to [Summary](https://github.com/l12f3r/CKAstudy/tree/main/03workingK8sCluster#readme)
