@@ -36,7 +36,9 @@ spec:                           #Implementation details of the object
 
 - Use `kubectl explain` to quickly lookup the fields for an object to help fill out the implementation details
 - Use `--dry-run=client -o yaml` to quickly generate a representation of a manifest imperatively 
-    - `kubectl create deployment hello-world --image=gcr.io./google-samples/hello-app:1.0 --dry-run=client -o yaml > deployment.yaml`
+    - Example: `kubectl create deployment hello-world --image=gcr.io./google-samples/hello-app:1.0 --dry-run=client -o yaml > deployment.yaml`
+    - On the server side, this is processed as a typical request but it is not persisted on etcd
+    - On the client side, the object to be created is written to stdout (although it is not provisioned) and it also validates the manifest syntax
 
 ## Application deployment process
 
