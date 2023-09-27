@@ -35,7 +35,7 @@
     - **Version**: v1, beta, alpha
 
 ## kubectl operations
-- [`dry-run`](https://github.com/l12f3r/CKAstudy/blob/main/Kubernetes%20Installation%20and%20Configuration%20Fundamentals/01exploringKubernetesArchitecture/07k8sClusterComponents.md#control-plane-node-components)
+- [`dry-run`](https://github.com/l12f3r/CKAstudy/blob/main/Kubernetes%20Installation%20and%20Configuration%20Fundamentals/03workingK8sCluster/02applicationPodDeployment.md#example-of-a-basic-deployment-manifest-file)
 - `diff`: generates the difference between current state (resources currently running) and desired state (resources defined on a manifest)
     - differences are outputted to stdout
     - helps understanding what will be changed upon execution

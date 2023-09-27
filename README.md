@@ -11,4 +11,4 @@
 3. [Working with your Kubernetes Cluster](https://github.com/l12f3r/CKAstudy/blob/main/Kubernetes%20Installation%20and%20Configuration%20Fundamentals/03workingK8sCluster/README.md)
 
 ## Managing the Kubernetes API Server and Pods
-1. Using the Kubernetes API
+1. [Using the Kubernetes API](https://github.com/l12f3r/CKAstudy/blob/main/Managing%20the%20Kubernetes%20API%20Server%20and%20Pods/01usingK8sAPI/README.md)
