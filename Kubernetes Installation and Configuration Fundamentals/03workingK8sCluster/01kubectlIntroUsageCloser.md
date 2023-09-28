@@ -10,6 +10,8 @@
 ## Main operations using kubectl
 - `kubectl apply` or `kubectl create`: sends API request to create a Deployment resource
 - `kubectl run`: starts a single Pod from an image (when Pod is not managed by a [controller](../01exploringKubernetesArchitecture/04APIObjectsControllers.MD))
+- `kubectl config get-contexts`: information about the current cluster context (ensure authentication on the correct cluster)
+    - `kubectl config use-context context-name@kubernetes` to select the proper context 
 - `kubectl explain`: provides documentation on resources, lists required fields (`apiVersion`, `kind`, `spec` etc) for declaring resource
 - `kubectl delete`: deletes resources
 - `kubectl get`: lists resources, provides basic information about specified resource type
