@@ -11,6 +11,7 @@
 
 ## RESTful API verbs
 
+| ------------- | ------------- |
 | `GET`  | Gets data for a specified resource  | 
 | `POST`  | Creates a resource |
 | `DELETE`  | Deletes a resource |
