@@ -4,6 +4,8 @@
 
 1. A command is entered in `kubectl`, which converts this request from YAML into JSON, and submits it to the API Server (depending on the request)
     - Commands are based on RESTful actions - `GET`, `POST`, `DELETE`
+    - In order to see the conversion process, use verbose: `kubectl get pod hello-pod -v 9`
+        - 9 is the most verbose as it gets
 2. An API resource location (or API path) must be specified
     - The [API group](02APIGroupsVersioning.md) is encoded in this path, along with information if it is Core or Named, the version of the API to work with, and the object type
 3. If the request is valid, the API Server commits it to etcd with the `WRITE` operation and responds with the proper HTTP response code (200, 404 etc)
@@ -44,7 +46,7 @@
 
 ## A closer look
 
-| **CLIENT REQUEST** | Connection -> | Authentication -> | Authorization -> | Admission Control | **SERVER RESPONSE** |
+| **CLIENT REQUEST** | Connection -> | Authentication -> | Authorization -> | Admission Control -> | **SERVER RESPONSE** |
 | --- | --- | --- | --- | --- | --- |
 | --- | First step: identify if a connection to the API Server is possible | Determine if it's a valid user | Can this user perform the requested action? | Admin control over request | --- |
 | --- | If possible, it'll be HTTP over TCP | Validation via authentication plugin | Can the user execute the API verb on the resource/API path? | Additional code [^3] | --- |
