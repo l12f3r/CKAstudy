@@ -12,3 +12,4 @@
 
 ## Managing the Kubernetes API Server and Pods
 1. [Using the Kubernetes API](https://github.com/l12f3r/CKAstudy/blob/main/Managing%20the%20Kubernetes%20API%20Server%20and%20Pods/01usingK8sAPI/README.md)
+2. [Managing Objects with Labels, Annotations and Namespaces](https://github.com/l12f3r/CKAstudy/blob/main/Managing%20the%20Kubernetes%20API%20Server%20and%20Pods/02managingObjectsLabelsAnnotationsNamespaces/README.md)
