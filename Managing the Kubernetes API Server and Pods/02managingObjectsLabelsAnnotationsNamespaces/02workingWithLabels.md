@@ -24,7 +24,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: nginx-pod
-    labels:                     # This is where Labels are declared
+    labels:                   # This is where Labels are declared
       app: v1                 # Key/value pair #1
       tier: PROD              # Key/value pair #2
 spec:
@@ -41,14 +41,27 @@ spec:
 | `kubectl` | `get` | `pods` | `-l 'tier in (prod,qa)'` | Outputs Pods where the Selector key matches `tier` and value matches `prod` or `qa` |
 | `kubectl` | `get` | `pods` | `-l 'tier notin (prod,qa)'` | Outputs all Pods, but those where the Selector key matches `tier` and value matches `prod` or `qa` |
 
-## How Kubernetes uses Labels
+## How Kubernetes uses Labels and Selectors
 
-- Controllers and Services matches Pods using Selectors
+- Controllers and Services matches to Pods using Selectors
     - How Kubernetes knows if a subset of Pods belongs to a specific Deployment, or Service
     - Services can route workload to a Pod with a matching Label
-- Influences Pods scheduling into specific Nodes (requires special hardware like SSD or GPU)
+- Influences Pods scheduling into specific Nodes (Pods that need SSD can be scheduled to Nodes with a SSD matching label, for instance)
 
-### Defining Deployments and Services with Labels
+### Services
+
+- A service usually acts as frontend / load balancer for Pods within a cluster
+  - Pods that will receive workload must have matching labels with the Service's Selector
+    - If a Pod has its label removed, it'll be decommissioned as endpoint and will no longer receive workloads
+
+### Controller Operations (Deployments)
+
+- Deployments can instantiate objects (like a ReplicaSet) with a specific label
+  - Pods scheduled by this ReplicaSet will have this label associated to it
+- If this label is changed on the Deployment level (`version=1` to `version=2`, for instance), a new ReplicaSet with this new label will be instantiated and new Pods will be scheduled on the new ReplicaSet, with the new label
+  - If a Pod loses this label, it'll be removed from the ReplicaSet
+
+## Declaring Deployments and Services with Labels 
 
 #### Deployment
 ```
