@@ -18,7 +18,7 @@
 ## Working with Namespaces
 
 - Namespaces can be created (`kubectl create`), queried (`kubectl get` or `kubectl describe`) and deleted (`kubectl delete`)
-- Objects in a Namespace can be operated (i.e., delete all Pods on a spacific Namespace)
+- Objects in a Namespace can be operated (i.e., delete all Pods on a specific Namespace)
 - Some objects are Namespaced, some aren't
     - 👍 Resources: Pods, Controllers, Services
         - To list all Namespaced resources on the etcd, run `kubectl api-resources --namespaced=true`
