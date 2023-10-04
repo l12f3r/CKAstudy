@@ -46,7 +46,7 @@ spec:
 - Controllers and Services matches to Pods using Selectors
     - How Kubernetes knows if a subset of Pods belongs to a specific Deployment, or Service
     - Services can route workload to a Pod with a matching Label
-- Influences Pods scheduling into specific Nodes (Pods that need SSD can be scheduled to Nodes with a SSD matching label, for instance)
+- Influences Pods scheduling into specific Nodes (Pods that need SSD can be scheduled to Nodes with a SSD `nodeSelector`, for instance)
 
 ### Services
 
@@ -58,8 +58,10 @@ spec:
 
 - Deployments can instantiate objects (like a ReplicaSet) with a specific label
   - Pods scheduled by this ReplicaSet will have this label associated to it
-- If this label is changed on the Deployment level (`version=1` to `version=2`, for instance), a new ReplicaSet with this new label will be instantiated and new Pods will be scheduled on the new ReplicaSet, with the new label
-  - If a Pod loses this label, it'll be removed from the ReplicaSet
+  - The ReplicaSet's has a pattern label, `pod-template-hash`, included as suffix of its name. This pattern is passed to Pods scheduled by the ReplicaSet as label 
+    - For instance, a ReplicaSet imperatively created as `hello-world` will actually be called something like `hello-world-5646fcc96b` and will carry and pass the `pod-template-hash=5646fcc96b` label to the Pods scheduled by it
+  - If this label is changed on the Deployment level (`version=1` to `version=2`, for instance), a new ReplicaSet with this new label will be instantiated and new Pods will be scheduled on the new ReplicaSet, with the new label
+    - If a Pod loses the matching label, it'll be removed from the ReplicaSet but will still be running. A new Pod will be scheduled by the ReplicaSet to replace the edited, un-matching label Pod
 
 ## Declaring Deployments and Services with Labels 
 
