@@ -15,12 +15,33 @@
     - Single process running on a container
     - Leads to easier scaling due to minimizing dependencies between applications
 - **Multi-container Pod**: for scenarios with tightly-coupled applications with producer/consumer relationship
-- **Init containers**: containers that run before the main application container is started on a Pod, necessary for setting something up the for application container before it starts
+    - Processes are scheduled together onto the same node
+    - Usually, there is a shared resource between those containers, that's why they're on the same Pod
+        - Usually, some container process generates data, while another container processes consumes such data
+    - Should not be used to influence scheduling (there's [Labels, Namespaces and Annotations](../02managingObjectsLabelsAnnotationsNamespaces/README.md) for that)
+    - Web and database servers should not live on the same Pod
+        - When it comes to recovery options, the ephemerity of the stateless web server wouldn't match with the stateful database - if the Pod is killed, the database state would not be kept
+        - Also limits scalability - stateful and stateless applications have different scaling patterns
+- **Init containers**: containers that run before the main application container is started on a Pod
+    - Necessary for setting something (like tools and utilities) up the for application container before it starts
+    - Main execution is started only after init containers have been run to completion
+        - Execution sequence follows the specification on the controller definition (`pod.spec`)
+        - If a failure occurs, the container `restartPolicy` is applied. By default, it will stop the current execution and hinder the execution of remaining init containers
+    - Allows separation of duties - the main application can work under minimal privilege levels, letting init containers to handle operations at higher standards
+    - Can also be used to block container startup
+
+### Networking and storage between containers inside a Pod
+
+- Since that containers in a Pod share the same Linux network namespace (not to be related to the [Kubernetes subdividing functionality](../02managingObjectsLabelsAnnotationsNamespaces/01workingWithNamespaces.md)), communication is held over localhost using a loopback interface
+    - Be mindful of application port conflicts - make sure to have unique network ports configured
+- On a storage perspective, each container within a Multi-container Pod has its own file system
+    - Volumes are defined at the Pod level, that is, a volume is shared amongst containers on a Pod
+        - Volumes can be mounted into the container's file system
 
 ## Controllers and Pods
 
 - Controllers keep apps in desired state
-    - Think of a thermostat: the room temperature is the current state, and the ideal temperature is set by the desired state manifest. The termostat acts to bring the current state closer to the desired
+    - Think of a thermostat: the room temperature is the current state, and the ideal temperature is set by the desired state manifest. The thermostat acts to bring the current state closer to the desired
 - Used for application scaling and recovery
     - Responsible for starting, increasing/reducing the amount of and stopping Pods as defined on YAML manifest
     - Also bounces back and generates new Pods when identified that the desired state is not met after a Pod crash
