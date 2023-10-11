@@ -26,7 +26,7 @@
     - Necessary for setting something (like tools and utilities) up the for application container before it starts
     - Main execution is started only after init containers have been run to completion
         - Execution sequence follows the specification on the controller definition (`pod.spec`)
-        - If a failure occurs, the container `restartPolicy` is applied. By default, it will stop the current execution and hinder the execution of remaining init containers
+        - If a failure occurs, the container [`restartPolicy`](https://github.com/l12f3r/CKAstudy/blob/main/Managing%20the%20Kubernetes%20API%20Server%20and%20Pods/03runningManagingPods/02podLifecycle.md#container-restart-policy) is applied. By default, it will stop the current execution and hinder the execution of remaining init containers
     - Allows separation of duties - the main application can work under minimal privilege levels, letting init containers to handle operations at higher standards
     - Can also be used to block container startup
 
