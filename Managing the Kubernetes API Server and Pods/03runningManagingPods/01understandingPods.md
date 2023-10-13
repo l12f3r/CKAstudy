@@ -47,6 +47,7 @@
     - Also bounces back and generates new Pods when identified that the desired state is not met after a Pod crash
 - Bare/naked Pods (that is, Pods generated without a Controller) are not recommended since that they're not recreated when failure occurs
 - Main controllers: ReplicaSet, Deployment, Daemonset, Statefulset, Job, Cronjob
+- Further info: [Using Controllers to deploy applications and Deployment basics](../../Managing%20Kubernetes%20Controllers%20and%20Deployments/01usingControllersDeploymentBasics/01k8sPrincipalsControllerManager.md)
 
 ## Static Pods
 
