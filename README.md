@@ -16,6 +16,6 @@
 3. [Running and managing Pods](https://github.com/l12f3r/CKAstudy/blob/main/Managing%20the%20Kubernetes%20API%20Server%20and%20Pods/03runningManagingPods/README.md)
 
 ## Managing Kubernetes Controllers and Deployments
-1. [Using Controllers to deploy applications and Deployment basics]
+1. [Using Controllers to deploy applications and Deployment basics](https://github.com/l12f3r/CKAstudy/blob/main/Managing%20Kubernetes%20Controllers%20and%20Deployments/01usingControllersDeploymentBasics/README.md)
 2. [Maintaining applications with Deployments]
 3. [Deploying and Maintaining Applications with DaemonSets and Jobs]
