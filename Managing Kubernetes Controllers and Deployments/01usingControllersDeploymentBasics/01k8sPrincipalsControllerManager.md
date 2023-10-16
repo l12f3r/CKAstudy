@@ -6,7 +6,6 @@
 - **Controllers**
     - Keeps application/deployment on the desired state
     - Watches current state of cluster and, if needed, makes changes (scaling up or down, for instance) to reach the desired state
-    - Further info: 
 - API Server
     - Core information hub inside of Kubernetes
     - Where administrators interact with the cluster (using Controllers, for instance)
