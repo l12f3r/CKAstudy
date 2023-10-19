@@ -1,7 +1,7 @@
 # Using Controllers to deploy applications and Deployment basics
 
 ## Deployment controller
-- Provides declarative updates to ReplicaSets (and Pods it creates)
+- Provides declarative updates to [ReplicaSets](03replicaSet.md) (and Pods it creates)
 - Provides the orchestration to Pod creation/deletion
 - Used to **manage the state of the application** over time (by rolling out/back versions or scaling up/down the application)
     - Desired state is defined, Deployment controller follows it
