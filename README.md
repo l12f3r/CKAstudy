@@ -17,5 +17,5 @@
 
 ## Managing Kubernetes Controllers and Deployments
 1. [Using Controllers to deploy applications and Deployment basics](https://github.com/l12f3r/CKAstudy/blob/main/Managing%20Kubernetes%20Controllers%20and%20Deployments/01usingControllersDeploymentBasics/README.md)
-2. [Maintaining applications with Deployments]
+2. [Maintaining applications with Deployments](/Managing%20Kubernetes%20Controllers%20and%20Deployments/02maintainingApplicationsDeployments/README.md)
 3. [Deploying and Maintaining Applications with DaemonSets and Jobs]

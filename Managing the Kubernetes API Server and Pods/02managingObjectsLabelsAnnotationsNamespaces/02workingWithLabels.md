@@ -62,6 +62,7 @@ spec:
     - For instance, a ReplicaSet imperatively created as `hello-world` will actually be called something like `hello-world-5646fcc96b` and will carry and pass the `pod-template-hash=5646fcc96b` label to the Pods scheduled by it
   - If this label is changed on the Deployment level (`version=1` to `version=2`, for instance), a new ReplicaSet with this new label will be instantiated and new Pods will be scheduled on the new ReplicaSet, with the new label
     - If a Pod loses the matching label, it'll be removed from the ReplicaSet but will still be running. A new Pod will be scheduled by the ReplicaSet to replace the edited, un-matching label Pod
+- Further info: [Maintaining applications with Deployments](../../Managing%20Kubernetes%20Controllers%20and%20Deployments/02maintainingApplicationsDeployments/01updatingDeploymentCheckingRolloutStatus.md)
 
 ## Declaring Deployments and Services with Labels 
 

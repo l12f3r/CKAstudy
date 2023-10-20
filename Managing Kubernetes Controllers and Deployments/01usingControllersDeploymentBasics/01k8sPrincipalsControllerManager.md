@@ -31,7 +31,7 @@
 
 ## Controllers in Kubernetes
 - Controllers that control **Pods**:
-    - `ReplicaSet`: deploys and maintains a defined number of Pods from a Pod template (definition of what container image must be executed and its configuration)
+    - `ReplicaSet`: deploys and maintains a defined number of Pods from a Pod `template` (definition of what container image must be executed and its configuration)
     - `Deployment`: allows declarative updates of Pods and ReplicaSets, enabling to move between versions of container images and easily scale and manage applications
     - `DaemonSet`: ensures that all (or some) Nodes run a Pod (i.e., the kubeproxy for networking services inside of the cluster, log collectors, monitoring agents). Runs on each Node
     - `StatefulSet`: allows stateful applications to be managed by a Controller providing unique network names, persistent storage and ordered operations for scaling and rolling updates
