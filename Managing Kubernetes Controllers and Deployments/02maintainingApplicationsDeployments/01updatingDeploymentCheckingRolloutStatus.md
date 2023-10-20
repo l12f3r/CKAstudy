@@ -19,6 +19,15 @@
 ## Checking Deployment rollout status 
 - `kubectl rollout status deployment [name]`: interactive view of rollout status on the CLI, outputting to stdout new and terminating Pods
 - `kubectl describe deployment [name]`: deep-dive on metadata, including:
+    - `Annotations`: count of revisions of the Deployment
+    - `Selector`: the label Selector
+    - `Replicas`: line with `desired` | `updated` | `total` | `available` | `unavailable` information on replicas
+        - `desired`: total number of replicas declared (desired state)
+        - `updated`: number of Pods on the new `ReplicaSet`, maybe updated on a rollout
+        - `total`: total number of Pods in all `ReplicaSet`s
+        - `available`: total number of Pods currently up and running and reporting Ready across all `ReplicaSet`s
+        - `unavailable`: total number of Pods in NotReady status
+    - `Events`: logs of recent events occurred - valuable information source
     - Deployment statuses: **Complete** (all update work is finished), **Progressing** (update in course), **Failed** (update could not be completed)
 
 ###### Return to [Summary](README.md)
