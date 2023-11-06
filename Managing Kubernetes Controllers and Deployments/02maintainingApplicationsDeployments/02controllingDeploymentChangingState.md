@@ -3,7 +3,7 @@
 ## Using Deployments to change state
 
 ### Successfully controlling Deployment rollouts
-1. Define an **Update Strategy** on the Deployment `spec`
+1. Define an appropriate **Update Strategy** for the application, on the Deployment `spec` portion:
 ```
 apiVersion: apps/v1
 kind: Deployment
@@ -67,5 +67,24 @@ template:                           #template for Pod creation
 - Effectively restarts all the Pods (in a Deployment using the same Pod template spec) - no Pod is recreated, new `ReplicaSet` with the same Pod spec is set
 - Uses either `RollingUpdate` or `Recreate` Update Strategies
 - `kubectl rollout restart deployment hello-world`
+
+### Scaling Deployments
+- Manually: 
+    - `kubectl scale deployment hello-world --replicas=10` when imperatively
+    - When declaratively, `kubectl apply -f deployment.yaml --record` the following file::
+```
+# deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world
+spec:
+  replicas: 10                  # this is where the 10 replicas are set
+  selector:
+    matchLabels:
+      app: hello-world
+    ...
+```
+- Automatically: Using the Horizontal Pod Autoscaler
 
 ###### Return to [Summary](README.md)
