@@ -13,11 +13,15 @@
 ### Controller Operations
 - When a DaemonSet is declared, its controller is responsible for deploying a Pod on each worker node 👩‍🏭 in the cluster
     - Control plane node 🧠 is tainted for non-system service functions and workloads; only toleration is the `kube-proxy`
+- Apart from custom labels to determine membership, each Pod will be created with `controller-revision-hash` and `pod-template-generation` labels
+  - This is how the DaemonSet tracks updates - checking labels associated with versions of Pods rolled out
+  - If a Pod label is changed, the DaemonSet controller pushes it outside of the selector and provisions a new Pod to replace it, according to the desired state
 
 ### Pod Scheduling
 - By default, K8s ensures that one Pod will be scheduled to each worker node 👩‍🏭 by the default-scheduler
 - As further nodes are added to the cluster, they get a Pod each
     - Arbitrary: one can define which nodes get Pods, using `nodeSelector` and labeling nodes properly
+      - Basically, only nodes labeled with the `nodeSelector` get Pods
 
 ### Declaration
 ```
