@@ -6,4 +6,4 @@
 2. [Deployment Controller](02deployment.md)
 3. [ReplicaSet Controller](03replicaSet.md)
 
-###### Return to [root](https://github.com/l12f3r/CKAstudy/)
+###### [Return to root](https://github.com/l12f3r/CKAstudy/)
