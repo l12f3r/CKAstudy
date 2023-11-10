@@ -12,4 +12,4 @@
 4. [Pod and Service operations](08PodServiceOps.md)
 5. [Networking fundamentals](09NetworkingFundamentals.md)
 
-###### Return to [root](https://github.com/l12f3r/CKAstudy/)
+###### [Return to root](https://github.com/l12f3r/CKAstudy/)

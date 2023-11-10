@@ -9,4 +9,4 @@
 5. [Pod networking fundamentals](05podNetworkingFundamentals.md)
 6. [Creating a Control Plane Node 🧠 and adding a Worker Node 👩‍🏭 to the cluster](06creatingControlPlaneWorkerNode.md)
 
-###### Return to [root](https://github.com/l12f3r/CKAstudy/)
+###### [Return to root](https://github.com/l12f3r/CKAstudy/)
