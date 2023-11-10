@@ -32,6 +32,9 @@ kind: Job                                           # this is where the Job is d
 metadata:
   name: hello-world
 spec:
+  backoffLimit: 3                                   # number of re-attempts to run Job if execution if failed
+  completions: 50                                   # number of copies of this Pod to be executed to completion
+  parallelism: 10                                   # maximum number of Pods running concurrently
   template:
     spec:
       containers:                                   # spec for containers to run this Job
@@ -41,7 +44,7 @@ spec:
           - "/bin/bash"
           - "-c"
           - "/bin/echo Hello from Pod $(hostname) at $(data)"
-      restartPolicy: Never                          # only onFailure and Never policies are compatible
+      restartPolicy: Never                          # explicitly defined, because the default (Always) is not compatible
 ```
 
 ### Controlling Job execution
@@ -65,6 +68,7 @@ spec:
     - `suspend`: allows to suspend subsequent executions of the CronJob
     - `startingDeadlineSeconds`: amount of time to mark the Job as failed if it hasn't started
     - `concurrencyPolicy`: handles concurrent executions of a Job (either Allow, Forbid or Replace)
+    - `succesfulJobsHistoryLimit`: limit of successfully executed Jobs saved in the cluster
 
 ### CronJob declaration
 ```
