@@ -19,3 +19,8 @@
 1. [Using Controllers to deploy applications and Deployment basics](https://github.com/l12f3r/CKAstudy/blob/main/Managing%20Kubernetes%20Controllers%20and%20Deployments/01usingControllersDeploymentBasics/README.md)
 2. [Maintaining applications with Deployments](/Managing%20Kubernetes%20Controllers%20and%20Deployments/02maintainingApplicationsDeployments/README.md)
 3. [Deploying and Maintaining Applications with DaemonSets and Jobs](/Managing%20Kubernetes%20Controllers%20and%20Deployments/03daemonSetsJobs/README.md)
+
+## Configuring and Managing Kubernetes Storage and Scheduling
+1. [Configuring and Managing Storage in Kubernetes](/Configuring%20and%20Managing%20Kubernetes%20Storage%20and%20Scheduling/01configuringManagingStorage/README.md)
+2. [Configuration as Data - Environment Variables, Secrets, and ConfigMaps]()
+3. [Managing and Controlling the Kubernetes Scheduler]()
