@@ -33,17 +33,18 @@
 
 ```
 apiVersion: v1
-kind: PersistentVolume                  # where the PV is defined
+kind: PersistentVolume                    # where the PV is defined
 metadata:
   name: pv-nfs-data
 spec:
+  persistentVolumeReclaimPolicy: Retain   # where the reclaim policy is defined
   capacity:
-    storage: 10Gi                       # where storage capacity is defined
-  accessModes:                          # where access modes are defined
-    - ReadWriteMany                     # allows other types such as RWO and ROX
-  nfs:                                  # PV type definition and specifications
-    server: 172.16.94.5                 # IP of a storage server on the network
-    path: "/export/volumes/pod"         # export on the NFS server to mount locally
+    storage: 10Gi                         # where storage capacity is defined
+  accessModes:                            # where access modes are defined
+    - ReadWriteMany                       # allows other types such as RWO and ROX
+  nfs:                                    # PV type definition and specifications
+    server: 172.16.94.5                   # IP of a storage server on the network
+    path: "/export/volumes/pod"           # export on the NFS server to mount locally
 ```
 
 #### Types
@@ -93,9 +94,9 @@ spec:
 ...
 spec:
   volumes:                                              # declaration of how many volumes are required
-    - name: webcontent                                  
-      persistentVolumeClaim:                            # volume type
-        claimName: pvc-nfs-data
+  - name: webcontent                                  
+    persistentVolumeClaim:                            # volume type
+      claimName: pvc-nfs-data
   containers:
   - name: nginx
     ...
