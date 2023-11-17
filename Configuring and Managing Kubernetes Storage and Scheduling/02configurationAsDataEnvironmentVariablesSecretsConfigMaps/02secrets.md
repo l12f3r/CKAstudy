@@ -67,8 +67,7 @@ spec:
     ...
     volumeMounts:                           # where the volume will be exposed
       - name: appconfig
-    mountPath: "/etc/appconfig"             # where it should be mounted
-
+    mountPath: "/etc/appconfig"             # location where it should be mounted
 ```
 - Secrets can be mark as **Immutable** - that is, it cannot be changed after its creation
 
