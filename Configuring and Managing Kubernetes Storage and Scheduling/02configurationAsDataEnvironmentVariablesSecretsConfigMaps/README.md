@@ -4,5 +4,6 @@
 
 1. [Configuring Applications in Pods and Environment Variables](01configuringApplicationsPodsEnvironmentVariables.md)
 2. [Secrets](02secrets.md)
+3. [ConfigMaps](03configMaps.md)
 
 ###### [Return to root](https://github.com/l12f3r/CKAstudy/)
