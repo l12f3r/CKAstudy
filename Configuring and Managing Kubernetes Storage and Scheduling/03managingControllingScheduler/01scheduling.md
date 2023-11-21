@@ -18,13 +18,13 @@
 5. Once an workload is found by the kubelet, it signals the container runtime to start a container associated with the Pod being scheduled
 
 #### The node selection process looked closely 🔎
-- Three phases:
 | **Filtering** -> | **Scoring** -> | **Binding** |
 | --- | --- | --- |
 | Removes nodes that cannot run the Pod to be scheduled | Yields a list of eligible nodes to run the Pod | Updating `nodeName` on Pod's object |
 | From all nodes with a `READY` status | Evaluates a collection of scoring functions to get priority weights for finding the proper place to run a Pod | Highest priority nodes are added to a **Selected Nodes** list |
 | Applies filters (or predicates) to reduce the amount of eligible nodes to a **Filtered Nodes** list | List of eligble nodes: **Feasible Nodes** list | Ties are broken - a random node is selected upon race conditions |
 | Hard constraints (can this Pod run on this node?), `nodeSelector` | Policy constraints (is the container image already on the node?), taints and tolerations | API server is notified and `nodeName` update takes place |
+
 - Filtering finds if a node can run a Pod - Scoring tries to find the most appropriate place to run a Pod
 
 ### Resource requests
