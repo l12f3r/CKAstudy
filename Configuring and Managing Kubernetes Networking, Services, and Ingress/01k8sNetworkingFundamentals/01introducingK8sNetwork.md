@@ -48,10 +48,8 @@
 - DNS is provided as a Service in a cluster, using CoreDNS as default
 - Pods are configured to use this internal cluster DNS server as default
 - In a DNS server, records are created for resources deployed on the cluster
-| Resource | Record |
-| --- | --- |
-| Services | A(IPv4)/AAAA(IPv6) |
-| Namespaces | Subdomains |
+    - Services - A(IPv4)/AAAA(IPv6)
+    - Namespaces get Subdomains records
 - The DNS Service is core to Service discovery inside of K8s (as resources and Services are created, Pods can reference resources by their DNS names)
 - Both the DNS Service and Pods configuration can be customized
 
