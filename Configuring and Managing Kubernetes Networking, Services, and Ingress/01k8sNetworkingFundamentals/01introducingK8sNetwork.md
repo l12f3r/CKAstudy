@@ -14,7 +14,7 @@
     - Cloud/database network, where the cluster's nodes are connected to (AWS VPC, for instance)
     - Each node has an IP address assigned from this network, and nodes can reach each other (apart from reaching other resources within this network)
 - **Pod network**:
-    - Each Pod has a single IP address assigned, either from the node network or (more commonly) from a pool of IPs called **Pod CIDR range**
+    - Each Pod has a single IP address assigned, either from the node network or (more commonly) from a pool of IPs called `PodCIDR` range
 - **Cluster network**
     - Used by services using the `clusterIP` Service type
     - IP addresses for Services on this network are allocated from the range specified on its range parameter
@@ -43,5 +43,55 @@
 - kubelets on nodes are also responsible for controlling local network configuration, which in turn defines a **network plugin** (either CNI or Kubenet)
     - When configured for CNI, the kubelet loads its plugin and configuration
     - If set for Kubenet, the node is configured with routes and bridges inside the BaseOS
+
+## Cluster DNS
+- DNS is provided as a Service in a cluster, using CoreDNS as default
+- Pods are configured to use this internal cluster DNS server as default
+- In a DNS server, records are created for resources deployed on the cluster
+| Resource | Record |
+| --- | --- |
+| Services | A(IPv4)/AAAA(IPv6) |
+| Namespaces | Subdomains |
+- The DNS Service is core to Service discovery inside of K8s (as resources and Services are created, Pods can reference resources by their DNS names)
+- Both the DNS Service and Pods configuration can be customized
+
+### Configuring a forwarder
+- Allows controlling where the DNS Service is forwarding requests to
+```
+apiVersion: v1
+kind: ConfigMap                                                 # configuration is stored as a ConfigMap
+metadata:
+  name: coredns                                                 # specific name and location on namespace
+  namespace: kube-system
+data:                                                               
+  Corefile: |                                                   # mapped as volume under this name on /etc/coredns
+    .:53 {
+        ...
+        kubernetes cluster.local in-addr.arpa ip6.arpa {
+            pods insecure
+            fallthrough in-add.arpa ip6.arpa
+            ttl 30
+        }
+        forward . /etc/resolv.conf                              # forwards to all DNS zones to /etc/resolv.conf, or to IP address
+        ...
+    }
+```
+
+#### Specifying DNS servers
+```
+...
+    spec:                                               # the Pod's spec
+      containers:
+      - name: hello-world
+        image: gcr.io/google-samples/hello-app:1.0
+        ports:
+        - containerPort: 8080
+      dnsPolicy: "None"                                 # definition of specific DNS configuration to be applied
+      dnsConfig:                                        # where DNS specific configurations are defined
+        nameservers:
+          - 9.9.9.9
+        searches:
+          - db1.ns1.svc.cluster.local
+```
 
 ###### Return to [Summary](README.md)
