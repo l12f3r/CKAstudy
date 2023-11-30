@@ -21,7 +21,7 @@
 
 ## Pod networking and communication
 1. Inside a multi-containered Pod:
-    _ Containers within it share the same network namespace (implemented by the **Pause/Infrastructure container**), a single IP address and port range for applications to run on
+    - Containers within it share the same network namespace (implemented by the **Pause/Infrastructure container**), a single IP address and port range for applications to run on
         - The Pause/Infrastructure container starts before the creation/start of a Pod, setting up the network namespace for the containers to share
             - It also enables application containers to be restarted without interrupting the network namespace
             - Has the same lifecycle as the Pod (if Pod is deleted, so is the Pause/Infrastructure container)
