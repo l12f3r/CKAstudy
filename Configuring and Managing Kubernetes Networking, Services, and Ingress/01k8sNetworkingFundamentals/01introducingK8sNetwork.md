@@ -10,28 +10,30 @@
         - Pods need to communicate with each other (regardless of the node) using its real IP address
 
 ## Kubernetes network topology
-- **Node network**:
+- **Node network**: 🟠
     - Cloud/database network, where the cluster's nodes are connected to (AWS VPC, for instance)
     - Each node has an IP address assigned from this network, and nodes can reach each other (apart from reaching other resources within this network)
-- **Pod network**:
+- **Pod network**: 🔵
     - Each Pod has a single IP address assigned, either from the node network or (more commonly) from a pool of IPs called `PodCIDR` range
-- **Cluster network**
+- **Cluster network** 🟢
     - Used by services using the `clusterIP` Service type
     - IP addresses for Services on this network are allocated from the range specified on its range parameter
 
 ## Pod networking and communication
+1. Inside a multi-containered Pod: 🔵
+    - Containers within it share the same network namespace (implemented by the **Pause/Infrastructure container**), a single IP address and port range for applications to run on
 1. Inside a multi-containered Pod:
     - Containers within it share the same network namespace (implemented by the **Pause/Infrastructure container**), a single IP address and port range for applications to run on
         - The Pause/Infrastructure container starts before the creation/start of a Pod, setting up the network namespace for the containers to share
             - It also enables application containers to be restarted without interrupting the network namespace
             - Has the same lifecycle as the Pod (if Pod is deleted, so is the Pause/Infrastructure container)
     - Communication is held over `localhost`
-2. Communication between Pods within the same node:
+2. Communication between Pods within the same node: 🟠
     - Held by an interface inside each Pod (`eth0`, `veth0`), that is attached to a local software bridge/tunnel interface, to communicate using their actual Pod's IP addresses
-3. Communication between Pods from different nodes:
+3. Communication between Pods from different nodes: 🟢
     - Held by using Pod's real IP addresses
     - Network between those nodes must use a Layer 2/3 (link/network) or overlay (virtual network over network) connectivity
-4. kube-proxy implements access to Services by exposing them to both internal and external cluster users (depending upon the Service type)
+4. kube-proxy implements access to Services by exposing them to both internal and external cluster users (depending upon the [Service type](../02services/01understandingServices.md#service-types))
 
 ## Container Network Interface (CNI)
 - Implements container and Pod networking in a cluster on an abstracted manner
