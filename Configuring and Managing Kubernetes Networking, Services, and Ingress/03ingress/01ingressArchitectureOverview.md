@@ -42,7 +42,7 @@
 - By using an Ingress Controller, latency is reduced since that requests are sent directly to Pod endpoints (rather than kube-proxy then Pod endpoints, across nodes depending on the situation)
 - Load balancers are more suited for TCP/UDP-based services (function on **Layer 4**)
 
-#### Exposing a single service with Ingress
+### Exposing a single service with Ingress
 - From a [Cluster Network](../01k8sNetworkingFundamentals/01introducingK8sNetwork.md#kubernetes-network-topology) 🟢 standpoint; a cluster running some Pods is front-ended with a `ClusterIP`-based Service 🟢 (`10.1.22.10:80` for instance), access to the Pod-based applications 🔵 is completed with Ingress by implementing the following steps:
 1. Defining an Ingress Controller 🔵, then an Ingress Resource defining access rules for outsiders
 2. The Ingress Controller exposes a `NodePort` 🟠 (`172.16.94.XY:32235` for example) or `LoadBalancer` (a public IP address on port 80) Service
@@ -62,7 +62,7 @@ spec:
         number: 80
 ```
 
-#### Exposing multiple services with Ingress
+### Exposing multiple services with Ingress
 - `ClusterIP` Services 🟢 named Blue and Red are exposed on a cluster with running Pods 🔵
 - Ingress Rules must be defined for path-based routing, then an Ingress Controller must be deployed to expose resources on a public IP address
 - As HTTP-based traffic comes into the Ingress Controller, path-based routing is used on Ingress Rules to look at the URL request and route traffic to the correct applications based on host header or DNS name
