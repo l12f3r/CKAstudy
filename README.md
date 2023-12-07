@@ -29,3 +29,8 @@
 1. [Kubernetes networking fundamentals](/Configuring%20and%20Managing%20Kubernetes%20Networking,%20Services,%20and%20Ingress/01k8sNetworkingFundamentals/README.md)
 2. [Configuring and Managing Application Access with Services](/Configuring%20and%20Managing%20Kubernetes%20Networking,%20Services,%20and%20Ingress/02services/README.md)
 3. [Configuring and Managing Application Access with Ingress](/Configuring%20and%20Managing%20Kubernetes%20Networking,%20Services,%20and%20Ingress/03ingress/README.md)
+
+## Maintaining, Monitoring and Troubleshooting Kubernetes
+1. [Maintaining Kubernetes Clusters](/Maintaining,%20Monitoring%20and%20Troubleshooting%20Kubernetes/01maintaining/README.md)
+2. [Logging and Monitoring in Kubernetes Clusters]()
+3. [Troubleshooting Kubernetes Clusters]()

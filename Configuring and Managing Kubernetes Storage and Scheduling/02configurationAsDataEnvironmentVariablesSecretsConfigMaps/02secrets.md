@@ -8,7 +8,7 @@
 ### Properties
 - base64 encoded (not encrypted - that's the default setting)
     - Encryption can be configured, if required
-- Information is stored inside of etcd
+- Information is stored inside of [etcd](/Maintaining,%20Monitoring%20and%20Troubleshooting%20Kubernetes/01maintaining/01etcd.md)
     - Backups and transport around this information needs to be secured
 - Namespaced
 - Can only be referenced by Pods in the same Namespace
