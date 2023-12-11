@@ -3,7 +3,7 @@
 ## Summary
 
 1. [etcd](01etcd.md)
-2. [Cluster upgrade]()
+2. [Cluster upgrade](02clusterUpgrade.md)
 3. [Worker node maintenance]()
 4. [High Availability cluster topology]()
 
