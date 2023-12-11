@@ -1,6 +1,6 @@
 # Maintaining Kubernetes Clusters
 
-## Cluster upgrade 
+## Cluster upgrade and maintenance
 
 ### Process overview 
 - To upgrade an existing kubeadm-based cluster:
@@ -57,5 +57,15 @@
     - `sudo apt-mark hold kubelet kubectl`
 5. **Uncordon the node**
     - `kubectl uncordon c1-wnode1`
+
+#### Worker 👩‍🏭 node maintenance
+- Common maintenance tasks include updating the OS and upgrading node hardware
+- Before performing maintenance, drain/cordon the node
+    - Draining evicts the node, cordoning only stops scheduling Pods to it
+    - Rebooting the node would depend on the `pod-eviction-timeout` to expire in order to evict the node; not a good practice
+- Resources (RAM, CPU) must support the workload during maintenance
+    - A good practice is over-scheduling during maintenance, so that performance would not be degraded
+- An alternative to upgrading nodes is replacing with upgraded systems
+    - Add some extra upgraded nodes to the cluster, move workload to the new nodes, drain and delete the old nodes from the cluster
 
 ###### Return to [Summary](README.md)

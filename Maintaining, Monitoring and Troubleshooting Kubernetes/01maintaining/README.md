@@ -4,7 +4,6 @@
 
 1. [etcd](01etcd.md)
 2. [Cluster upgrade](02clusterUpgrade.md)
-3. [Worker node maintenance]()
-4. [High Availability cluster topology]()
+3. [High Availability cluster topology]()
 
 ###### [Return to root](https://github.com/l12f3r/CKAstudy/)
