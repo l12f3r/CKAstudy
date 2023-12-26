@@ -33,4 +33,24 @@
 - In addition to authenticating to the API Server, it is also possible to store an **image pull secret** on a Service Account `Secret`
     - Credential information used to access a container registry that requires authentication
 
+### How to create
+- Imperatively: `kubectl create sa mysvcaccount1`
+- Declaratively:
+```
+apiVersion: 1
+kind: ServiceAccount                        # where the ServiceAccount is declared
+metadata:
+  name: mysvcaccount1
+  namespace: default                        # other namespaces can be defined
+```
+- Defining on a Pod's spec:
+```
+...
+spec:
+  serviceAccount: mysvcaccount1             # where the created ServiceAccount is called; calls default if not defined
+  containers:
+  - image: nginx
+    name: nginx
+```
+
 ###### Return to [Summary](README.md)
