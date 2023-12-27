@@ -6,7 +6,7 @@
 1. **Authentication** 👤: validates the identity of who/what submitted the request
     - Different methods, such as certificates or basic HTTP authentication
 2. **Authorization** 📋: determines if the requester is allowed to perform the action on the request submitted 
-    - Role-based Access Control (RBAC)
+    - Role-based Access Control (RBAC) 🧢
 3. **Admission Control** ✅: enables administrative control over API requests 
     - Has admission controllers intercepting requests prior to persisting the object on the cluster
     - Configuration of additional validation, modifying incoming objects
@@ -26,5 +26,13 @@
 
 [^1]: Certificates expire, and username changes require reissue.
 [^2]: Static token files' contents are only read when the API Server starts up; changes require restarting the API Server
+
+## Authorization plugins
+| Role-based Access Control (RBAC)[^1] 🧢  | Node [^1] | Attribute-based Access Control (ABAC) |
+| ------------- | ------------- | ------------- |
+| Access to resources is controlled based on roles granted to individual users and functions such roles can perform | Used to grant API access and permissions to kubelets on nodes | Access rights are granted to users through policies + attributes |
+| Role with functions is created, then bound to user | Restricts node access to resources that kubelets need to access | Enables granular access control based on users, resources and environment  |
+
+[^1]: Default authorization modules on kubeadm-based clusters
 
 ###### Return to [Summary](README.md)
