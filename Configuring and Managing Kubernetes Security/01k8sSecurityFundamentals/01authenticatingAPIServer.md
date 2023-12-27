@@ -28,11 +28,11 @@
 [^2]: Static token files' contents are only read when the API Server starts up; changes require restarting the API Server
 
 ## Authorization plugins
-| Role-based Access Control (RBAC)[^1] 🧢  | Node [^1] | Attribute-based Access Control (ABAC) |
+| Role-based Access Control (RBAC)[^3] 🧢  | Node [^3] | Attribute-based Access Control (ABAC) |
 | ------------- | ------------- | ------------- |
 | Access to resources is controlled based on roles granted to individual users and functions such roles can perform | Used to grant API access and permissions to kubelets on nodes | Access rights are granted to users through policies + attributes |
 | Role with functions is created, then bound to user | Restricts node access to resources that kubelets need to access | Enables granular access control based on users, resources and environment  |
 
-[^1]: Default authorization modules on kubeadm-based clusters
+[^3]: Default authorization modules on kubeadm-based clusters
 
 ###### Return to [Summary](README.md)
