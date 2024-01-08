@@ -4,7 +4,7 @@
 
 #### Steps to take before a request is accepted and processed by the API Server
 1. **Authentication** 👤: validates the identity of who/what submitted the request
-    - Different methods, such as certificates or basic HTTP authentication
+    - Different methods, such as [certificates](../02managingCertificateskubeconfigFiles/01certificatesPKI.md) or basic HTTP authentication
 2. **Authorization** 📋: determines if the requester is allowed to perform the action on the request submitted 
     - Role-based Access Control (RBAC) 🧢
 3. **Admission Control** ✅: enables administrative control over API requests 
