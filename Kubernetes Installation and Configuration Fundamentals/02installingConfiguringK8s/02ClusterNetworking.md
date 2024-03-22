@@ -2,7 +2,7 @@
 
 ## Cluster network ports
 - Cluster has network ports, that are necessary when building firewalls 🔥🧱 or other security perimeters around Kubernetes resources.
-- Port numbers are usually configureable, but default values are commom (and good) practice
+- Port numbers are usually configurable, but default values are commom (and good) practice
 
 ## How resources communicate
 - [Kubelet](/01exploringKubernetesArchitecture/07k8sClusterComponents.md#worker-node-components) and [Kube-proxy](/01exploringKubernetesArchitecture/07k8sClusterComponents.md#worker-node-components) on the worker node 👩‍🏭 communicate with the [API server](/01exploringKubernetesArchitecture/02kubernetesAPI.MD) on the control plane node 🧠 via [TCP/IP](https://www.techtarget.com/searchnetworking/definition/TCP-IP).
